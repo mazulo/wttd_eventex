@@ -1,5 +1,7 @@
 # Eventex
 
+[![Build Status](https://travis-ci.org/mazulo/wttd_eventex.svg?branch=master)](https://travis-ci.org/mazulo/wttd_eventex)
+
 Sistema de Eventos desenvolvido no curso Welcome to the Django
 
 ## Como desenvolver?
