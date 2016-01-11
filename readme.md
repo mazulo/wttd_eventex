@@ -1,6 +1,7 @@
 # Eventex
 
 [![Build Status](https://travis-ci.org/mazulo/wttd_eventex.svg?branch=master)](https://travis-ci.org/mazulo/wttd_eventex)
+[![Code Health](https://landscape.io/github/mazulo/wttd_eventex/master/landscape.svg?style=flat)](https://landscape.io/github/mazulo/wttd_eventex/master)
 
 Sistema de Eventos desenvolvido no curso Welcome to the Django
 
