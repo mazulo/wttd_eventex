@@ -41,9 +41,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Third apps
     'django_extensions',
+    'test_without_migrations',
     # My apps
     'eventex.core',
-    'eventex.subscriptions'
+    'eventex.subscriptions',
 )
 
 MIDDLEWARE_CLASSES = (
