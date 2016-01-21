@@ -14,7 +14,7 @@ Sistema de Eventos desenvolvido no curso Welcome to the Django
 5. Configure a instância com o .env
 6. Execute os testes
 
-````console
+````shell
 git clone git@github.com:mazulo/wttd_eventex.git wttd
 cd wttd
 python -m venv .wttd
