@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.shortcuts import resolve_url as r
 
-from eventex.core.models import Talk, Speaker
+from eventex.core.models import Talk, Speaker, Course
 
 
 class TalkListTest(TestCase):
@@ -16,6 +16,12 @@ class TalkListTest(TestCase):
             start='13:00',
             description='Descrição da palestra.'
         )
+        c1 = Course.objects.create(
+            title='Título do Curso',
+            start='09:00',
+            description='Descrição do curso.',
+            slots=20
+        )
         speaker = Speaker.objects.create(
             name='Patrick Mazulo',
             slug='patrick-mazulo',
@@ -23,6 +29,7 @@ class TalkListTest(TestCase):
         )
         t1.speakers.add(speaker)
         t2.speakers.add(speaker)
+        c1.speakers.add(speaker)
         self.resp = self.client.get(r('talk_list'))
 
     def test_get(self):
@@ -36,9 +43,12 @@ class TalkListTest(TestCase):
             (2, 'Título da Palestra'),
             (1, '10:00'),
             (1, '13:00'),
-            (2, '/palestrantes/patrick-mazulo/'),
-            (2, 'Patrick Mazulo'),
+            (3, '/palestrantes/patrick-mazulo/'),
+            (3, 'Patrick Mazulo'),
             (2, 'Descrição da palestra.'),
+            (1, 'Título do Curso'),
+            (1, '09:00'),
+            (1, 'Descrição do curso.'),
         ]
         for count, expected in contents:
             with self.subTest():
